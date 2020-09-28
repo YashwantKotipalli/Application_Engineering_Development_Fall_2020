@@ -40,6 +40,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         String ProductDesc = product.getDescription();
         DescriptionTextField.setText(ProductDesc);
         
+        
+        
     }
 
     /**
