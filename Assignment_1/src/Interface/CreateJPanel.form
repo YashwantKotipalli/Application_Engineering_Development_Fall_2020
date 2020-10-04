@@ -53,7 +53,14 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="imgLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="imgLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                                  <Component id="btnAttach" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_filename" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -163,6 +170,61 @@
                   <Component id="jLabel210" min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel221" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtBankAccountNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel222" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtLicenseNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel223" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtCarPlateNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel224" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtSerialNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel225" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel219" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtSsn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel226" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtIp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel227" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtBiometrics" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel220" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="txtMedicalRecordNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel228" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtUid" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel215" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtHealthPlanNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="btnCreate" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
@@ -193,77 +255,33 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel218" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="txtEmailId" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel217" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel217" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="txtFaxNum" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtFaxNum" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txt_filename" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAttach" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel218" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtEmailId" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel221" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtBankAccountNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel222" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtLicenseNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel223" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtCarPlateNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel224" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtSerialNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel225" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel219" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="txtSsn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel226" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="txtIp" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel227" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtBiometrics" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel220" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="txtMedicalRecordNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel228" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtUid" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel215" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="txtHealthPlanNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                  <Component id="btnCreate" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -289,6 +307,9 @@
               <Connection code="&quot;&quot;" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel212">
           <Properties>
@@ -419,6 +440,24 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAttach">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Attach Image"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAttachActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txt_filename">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Image Path: "/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
