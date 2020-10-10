@@ -21,7 +21,17 @@ public class Account {
     private String SerialNumber;
     private String ModelNumber;
     private String Location;
+    private Boolean Availability;
     private Date createdOn;
+
+    public Boolean getAvailability() {
+        
+        return Availability;
+    }
+
+    public void setAvailability(Boolean Availability) {
+        this.Availability = Availability;
+    }
 
     public Account() {
         

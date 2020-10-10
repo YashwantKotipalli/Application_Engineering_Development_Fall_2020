@@ -44,6 +44,16 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         txtSerialNumber.setText(account.getSerialNumber());
         txtModelNumber.setText(account.getModelNumber());
         txtLocation.setText(account.getLocation());
+        if(yes.isSelected()){
+            yes.setSelected(account.getAvailability());
+        }
+        else{
+             no.setSelected(account.getAvailability());
+        }
+        
+       
+        
+        
     }
 
     /**
@@ -55,6 +65,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Available = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -73,12 +84,12 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         txtSerialNumber = new javax.swing.JTextField();
         txtModelNumber = new javax.swing.JTextField();
         txtLocation = new javax.swing.JTextField();
-        rdAvailable = new javax.swing.JRadioButton();
-        rdNotAvailable = new javax.swing.JRadioButton();
         btnUpdate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        yes = new javax.swing.JRadioButton();
+        no = new javax.swing.JRadioButton();
 
         setPreferredSize(new java.awt.Dimension(900, 600));
 
@@ -119,12 +130,6 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
 
         txtLocation.setEnabled(false);
 
-        rdAvailable.setText("Yes");
-        rdAvailable.setEnabled(false);
-
-        rdNotAvailable.setText("No");
-        rdNotAvailable.setEnabled(false);
-
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +153,19 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         });
 
         jTextField1.setEnabled(false);
+
+        Available.add(yes);
+        yes.setText("yes");
+        yes.setEnabled(false);
+
+        Available.add(no);
+        no.setText("no");
+        no.setEnabled(false);
+        no.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,10 +218,10 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                                             .addComponent(jTextField1))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(rdAvailable)
                                             .addGap(18, 18, 18)
-                                            .addComponent(rdNotAvailable))
+                                            .addComponent(yes)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(no))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -251,8 +269,9 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rdAvailable)
-                    .addComponent(rdNotAvailable))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(yes)
+                        .addComponent(no)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
@@ -278,9 +297,9 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
             .addGap(0, 779, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 88, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 89, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -294,6 +313,8 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         txtSerialNumber.setEnabled(true);
         txtModelNumber.setEnabled(true);
         txtLocation.setEnabled(true);
+        yes.setEnabled(true);
+        no.setEnabled(true);
         btnUpdate.setEnabled(false);
         btnSave.setEnabled(true);
 
@@ -311,14 +332,14 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
 
-        if((txtCarName.getText().isEmpty()) || (txtManufacturer.getText().isEmpty()) || (txtYom.getText().isEmpty()) || (txtSeats.getText().isEmpty()) || (txtModelNumber.getText().isEmpty()) || (txtSerialNumber.getText().isEmpty()) || (txtLocation.getText().isEmpty())){
+        if((txtCarName.getText().isEmpty()) || (txtManufacturer.getText().isEmpty()) || (txtYom.getText().isEmpty()) || (txtSeats.getText().isEmpty()) || (txtModelNumber.getText().isEmpty()) || (txtSerialNumber.getText().isEmpty()) || (txtLocation.getText().isEmpty()) || ((!(yes.isSelected())||(no.isSelected())))){
             btnSave.setEnabled(false);
             JOptionPane.showMessageDialog(null, "Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnSave.setEnabled(true);
             
             
         }
-        else if((txtCarName.getText().isEmpty()) && (txtManufacturer.getText().isEmpty()) && (txtYom.getText().isEmpty()) && (txtSeats.getText().isEmpty()) && (txtModelNumber.getText().isEmpty()) && (txtSerialNumber.getText().isEmpty()) && (txtLocation.getText().isEmpty())){
+        else if((txtCarName.getText().isEmpty()) && (txtManufacturer.getText().isEmpty()) && (txtYom.getText().isEmpty()) && (txtSeats.getText().isEmpty()) && (txtModelNumber.getText().isEmpty()) && (txtSerialNumber.getText().isEmpty()) && (txtLocation.getText().isEmpty()) && ((!(yes.isSelected())||(no.isSelected())))){
             btnSave.setEnabled(false);
             JOptionPane.showMessageDialog(null, "All the Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnSave.setEnabled(true);
@@ -342,6 +363,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
             
         }
         
+        
         account.setCarName(txtCarName.getText());
         account.setManufacturer(txtManufacturer.getText());
         account.setYom(txtYom.getText());
@@ -349,14 +371,22 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
         account.setModelNumber(txtModelNumber.getText());
         account.setSerialNumber(txtSerialNumber.getText());
         account.setLocation(txtLocation.getText());
+        account.setAvailability(yes.isSelected());
+        
+        
         
         
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Available;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
@@ -372,8 +402,7 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JRadioButton rdAvailable;
-    private javax.swing.JRadioButton rdNotAvailable;
+    private javax.swing.JRadioButton no;
     private javax.swing.JTextField txtCarName;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtManufacturer;
@@ -381,5 +410,6 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSeats;
     private javax.swing.JTextField txtSerialNumber;
     private javax.swing.JTextField txtYom;
+    private javax.swing.JRadioButton yes;
     // End of variables declaration//GEN-END:variables
 }

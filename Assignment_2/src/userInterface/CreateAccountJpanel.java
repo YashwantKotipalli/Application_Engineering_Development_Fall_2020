@@ -9,6 +9,7 @@ import Business.AccountDirectory;
 import javax.swing.JPanel;
 import Business.*;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -24,11 +25,18 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private AccountDirectory accountDirectory;
+    
 
     CreateAccountJpanel(JPanel userProcessContainer, AccountDirectory accountDirectory){
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.accountDirectory = accountDirectory;
+        this.yes.setActionCommand("yes");
+        this.no.setActionCommand("no");
+        
+        
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,6 +47,7 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Availability = new javax.swing.ButtonGroup();
         lval = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,10 +67,10 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
         btnCreate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        yes = new javax.swing.JRadioButton();
+        no = new javax.swing.JRadioButton();
 
         setPreferredSize(new java.awt.Dimension(1500, 600));
 
@@ -88,20 +97,6 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
 
         jLabel11.setText("Availability: ");
 
-        jCheckBox1.setText("Yes");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setText("No");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-
         btnCreate.setText("Create Car Entry !");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +111,22 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
             }
         });
 
+        Availability.add(yes);
+        yes.setText("yes");
+        yes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yesActionPerformed(evt);
+            }
+        });
+
+        Availability.add(no);
+        no.setText("no");
+        no.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,39 +135,37 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
                 .addGap(0, 466, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
-                        .addGap(720, 720, 720))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel11))
-                                    .addComponent(jLabel8)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7)))
-                                .addGap(31, 31, 31))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
-                                .addGap(47, 47, 47)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel11))
+                            .addComponent(jLabel8)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)))
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtYom, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCarName, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(401, 401, 401))))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(47, 47, 47)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtYom, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCarName, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(yes)
+                        .addGap(18, 18, 18)
+                        .addComponent(no)))
+                .addGap(401, 401, 401))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -184,7 +193,7 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(27, 27, 27))
                     .addGroup(layout.createSequentialGroup()
@@ -206,7 +215,7 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtLocation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,8 +226,8 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
+                    .addComponent(yes)
+                    .addComponent(no))
                 .addGap(44, 44, 44)
                 .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
@@ -232,13 +241,13 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
 
-        if((txtCarName.getText().isEmpty()) || (txtManufacturer.getText().isEmpty()) || (txtYom.getText().isEmpty()) || (txtSeats.getText().isEmpty()) || (txtModelNumber.getText().isEmpty()) || (txtSerialNumber.getText().isEmpty()) || (txtLocation.getText().isEmpty())){
+        if((txtCarName.getText().isEmpty()) || (txtManufacturer.getText().isEmpty()) || (txtYom.getText().isEmpty()) || (txtSeats.getText().isEmpty()) || (txtModelNumber.getText().isEmpty()) || (txtSerialNumber.getText().isEmpty()) || (txtLocation.getText().isEmpty()) || (!(yes.isSelected() || no.isSelected()))){
             btnCreate.setEnabled(false);
             JOptionPane.showMessageDialog(null, "Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnCreate.setEnabled(true);
 
         }
-        else if((txtCarName.getText().isEmpty()) && (txtManufacturer.getText().isEmpty()) && (txtYom.getText().isEmpty()) && (txtSeats.getText().isEmpty()) && (txtModelNumber.getText().isEmpty()) && (txtSerialNumber.getText().isEmpty()) && (txtLocation.getText().isEmpty())){
+        else if((txtCarName.getText().isEmpty()) && (txtManufacturer.getText().isEmpty()) && (txtYom.getText().isEmpty()) && (txtSeats.getText().isEmpty()) && (txtModelNumber.getText().isEmpty()) && (txtSerialNumber.getText().isEmpty()) && (txtLocation.getText().isEmpty()) && (!(yes.isSelected() || no.isSelected()))){
             btnCreate.setEnabled(false);
             JOptionPane.showMessageDialog(null, "All the Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnCreate.setEnabled(true);
@@ -261,6 +270,8 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Car Entry Sucessfully Created !!!");
 
         }
+        
+        
         String CarName = txtCarName.getText();
         String Manufacturer = txtManufacturer.getText();
         String Yom = txtYom.getText();
@@ -268,6 +279,11 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
         String SerialNumber = txtSerialNumber.getText();
         String ModelNumber = txtModelNumber.getText();
         String Location = txtLocation.getText();
+        String selection = this.Availability.getSelection().getActionCommand();
+         
+        
+        
+        
         
 
         Account account = accountDirectory.addAccount();
@@ -278,7 +294,19 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
         account.setSerialNumber(SerialNumber);
         account.setModelNumber(ModelNumber);
         account.setLocation(Location);
-
+        
+        if(yes.isSelected()){
+            
+            account.setAvailability(Boolean.TRUE);
+        }
+        else{
+            account.setAvailability(Boolean.FALSE);
+        }
+        
+        
+          
+          
+          
         
     }//GEN-LAST:event_btnCreateActionPerformed
 
@@ -290,20 +318,25 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+        
+        no.setActionCommand("no");
+    }//GEN-LAST:event_noActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+        
+        
+        
+        
+    }//GEN-LAST:event_yesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Availability;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -316,6 +349,7 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lval;
+    private javax.swing.JRadioButton no;
     private javax.swing.JTextField txtCarName;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtManufacturer;
@@ -323,5 +357,6 @@ public class CreateAccountJpanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSeats;
     private javax.swing.JTextField txtSerialNumber;
     private javax.swing.JTextField txtYom;
+    private javax.swing.JRadioButton yes;
     // End of variables declaration//GEN-END:variables
 }

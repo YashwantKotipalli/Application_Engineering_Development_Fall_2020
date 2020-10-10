@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 
+
 /**
  *
  * @author DELL
@@ -20,6 +21,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
     private AccountDirectory accountDirectory;
+    private AccountDirectory accountList2;
     /**
      * Creates new form ManageAccountJPanel
      */
@@ -31,6 +33,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.accountDirectory = accountDirectory;
+        this.accountList2 = accountList2;
         
         populateTable();
         
@@ -41,7 +44,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         
         for(Account account: accountDirectory.getAccountList()){
-            Object[] row = new Object[7];
+            Object[] row = new Object[8];
             row[0] = account.getCarName();
             row[1]=account.getManufacturer();
             row[2] = account.getYom();
@@ -49,9 +52,10 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             row[4] = account.getModelNumber();
             row[5] = account.getSerialNumber();
             row[6] = account.getLocation();
+            row[7] = (account.getAvailability());
             dtm.addRow(row);
             
-            dtm.addRow(row);
+            
         }
     }
          
@@ -74,15 +78,15 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         txtSeats = new javax.swing.JTextField();
         txtModelNumber = new javax.swing.JTextField();
         txtLocation = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        txtSerialNumber = new javax.swing.JTextField();
+        txtAvailability = new javax.swing.JTextField();
         btnSearchName = new javax.swing.JButton();
         btnSearchManufacturer = new javax.swing.JButton();
         btnSearchYom = new javax.swing.JButton();
         btnSearchSeats = new javax.swing.JButton();
         btnModelNumber = new javax.swing.JButton();
         btnSearchLocation = new javax.swing.JButton();
-        btnSearchManufacturingCertificate = new javax.swing.JButton();
+        btnSearchSerialNumber = new javax.swing.JButton();
         btnSearchAvailability = new javax.swing.JButton();
         btnViewDetails = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
@@ -97,11 +101,11 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Car Name", "Manufacturer", "Year Of Manufacturing", "Number of Seats", "Model Number", "Serial Number", "Location"
+                "Car Name", "Manufacturer", "Year Of Manufacturing", "Number of Seats", "Model Number", "Serial Number", "Location", "Available"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -109,6 +113,12 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tblAccounts);
+
+        txtCarName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCarNameActionPerformed(evt);
+            }
+        });
 
         btnSearchName.setText("Search By Name: ");
         btnSearchName.addActionListener(new java.awt.event.ActionListener() {
@@ -152,10 +162,10 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSearchManufacturingCertificate.setText("Search By Manufacturing Certificate: ");
-        btnSearchManufacturingCertificate.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchSerialNumber.setText("Search By Serial Number: ");
+        btnSearchSerialNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchManufacturingCertificateActionPerformed(evt);
+                btnSearchSerialNumberActionPerformed(evt);
             }
         });
 
@@ -230,13 +240,13 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                             .addComponent(btnViewDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSearchManufacturingCertificate)
+                        .addComponent(btnSearchSerialNumber)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnSearchAvailability)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -279,12 +289,12 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
                             .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSearchManufacturingCertificate)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSearchSerialNumber)
+                            .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSearchAvailability)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnBack)
                         .addContainerGap(42, Short.MAX_VALUE))))
@@ -294,18 +304,18 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1560, Short.MAX_VALUE)
+            .addGap(0, 1437, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(0, 123, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1437, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+            .addGap(0, 763, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(26, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -314,9 +324,49 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private void btnSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNameActionPerformed
         // TODO add your handling code here:
         
-        Account result = accountDirectory.searchAccount(txtCarName.getText());
+        Account result = accountDirectory.SearchCarName(txtCarName.getText());
         if(result==null){
             JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            
+            
+            
+           
+            
+            ViewAccountJPanel panel  = new ViewAccountJPanel(userProcessContainer, result);
+            userProcessContainer.add("SearchedResults", panel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+            
+            
+            
+            
+            
+                    
+            
+
+//            Account account = accountDirectory.addAccount();
+//            account.setCarName(CarName);
+//            account.setManufacturer(Manufacturer);
+//            account.setYom(Yom);
+//            account.setNumberOfSeats(NumberOfSeats);
+//            account.setSerialNumber(SerialNumber);
+//            account.setModelNumber(ModelNumber);
+//            account.setLocation(Location);
+            
+            
+            
+        }
+
+    }//GEN-LAST:event_btnSearchNameActionPerformed
+
+    private void btnSearchSerialNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSerialNumberActionPerformed
+        // TODO add your handling code here:
+        
+        Account result = accountDirectory.SearchSerialNumber(txtSerialNumber.getText());
+        if(result==null){
+            JOptionPane.showMessageDialog(null, "Serial Number Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -326,25 +376,7 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             layout.next(userProcessContainer);
             
         }
-
-    }//GEN-LAST:event_btnSearchNameActionPerformed
-
-    private void btnSearchManufacturingCertificateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchManufacturingCertificateActionPerformed
-        // TODO add your handling code here:
-        
-//        Account result = accountDirectory.searchAccount(txt.getText());
-//        if(result==null){
-//            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
-//        }
-//        else{
-//            
-//            ViewAccountJPanel panel  = new ViewAccountJPanel(userProcessContainer, result);
-//            userProcessContainer.add("ViewAccountJPanel", panel);
-//            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//            layout.next(userProcessContainer);
-//            
-//        }
-    }//GEN-LAST:event_btnSearchManufacturingCertificateActionPerformed
+    }//GEN-LAST:event_btnSearchSerialNumberActionPerformed
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
@@ -364,6 +396,8 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
             layout.next(userProcessContainer);
 
         }
+        
+       
 
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
@@ -398,9 +432,9 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
 
     private void btnSearchManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchManufacturerActionPerformed
         // TODO add your handling code here:
-        Account result = accountDirectory.searchAccount(txtManufacturer.getText());
+        Account result = accountDirectory.SearchManufcturer(txtManufacturer.getText());
         if(result==null){
-            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Manufacturer Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -416,9 +450,9 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private void btnSearchYomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchYomActionPerformed
         // TODO add your handling code here:
         
-        Account result = accountDirectory.searchAccount(txtYom.getText());
+        Account result = accountDirectory.SearchYom(txtYom.getText());
         if(result==null){
-            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Year Of Manufacturing Date, Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -433,9 +467,9 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private void btnSearchSeatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSeatsActionPerformed
         // TODO add your handling code here:
         
-        Account result = accountDirectory.searchAccount(txtSeats.getText());
+        Account result = accountDirectory.SearchNumberOfSeats(txtSeats.getText());
         if(result==null){
-            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Number of seats is invalid !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -450,9 +484,9 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private void btnModelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModelNumberActionPerformed
         // TODO add your handling code here:
         
-        Account result = accountDirectory.searchAccount(txtModelNumber.getText());
+        Account result = accountDirectory.SearchModelNumber(txtModelNumber.getText());
         if(result==null){
-            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Model Number Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -467,9 +501,9 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private void btnSearchLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchLocationActionPerformed
         // TODO add your handling code here:
         
-        Account result = accountDirectory.searchAccount(txtLocation.getText());
+        Account result = accountDirectory.SearchLocation(txtLocation.getText());
         if(result==null){
-            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Location Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             
@@ -483,8 +517,8 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
 
     private void btnSearchAvailabilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAvailabilityActionPerformed
         // TODO add your handling code here:
-        
-//        Account result = accountDirectory.searchAccount(txt.getText());
+//        
+//        Account result = accountDirectory.SearchAvailability(yes.isSelected());
 //        if(result==null){
 //            JOptionPane.showMessageDialog(null, "Car Name Does Not exist !!", "Information", JOptionPane.INFORMATION_MESSAGE);
 //        }
@@ -498,6 +532,10 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
 //        }
     }//GEN-LAST:event_btnSearchAvailabilityActionPerformed
 
+    private void txtCarNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCarNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
@@ -506,21 +544,21 @@ public class ManageAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearchAvailability;
     private javax.swing.JButton btnSearchLocation;
     private javax.swing.JButton btnSearchManufacturer;
-    private javax.swing.JButton btnSearchManufacturingCertificate;
     private javax.swing.JButton btnSearchName;
     private javax.swing.JButton btnSearchSeats;
+    private javax.swing.JButton btnSearchSerialNumber;
     private javax.swing.JButton btnSearchYom;
     private javax.swing.JButton btnViewDetails;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTable tblAccounts;
+    private javax.swing.JTextField txtAvailability;
     private javax.swing.JTextField txtCarName;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtManufacturer;
     private javax.swing.JTextField txtModelNumber;
     private javax.swing.JTextField txtSeats;
+    private javax.swing.JTextField txtSerialNumber;
     private javax.swing.JTextField txtYom;
     // End of variables declaration//GEN-END:variables
 
