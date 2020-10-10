@@ -137,20 +137,11 @@ public class MainFrame extends javax.swing.JFrame {
         CardLayout layout = (CardLayout)panelRight.getLayout();
         panelRight.add(new LoginScreen(panelRight, adminUser.getCustDir().getCustomerList()));
         layout.next(panelRight);
-        btnCustomer.addActionListener(ActionEvent e);
+        
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     
-    public static class Action implements ActionListener{
-        
-        public void actionperformed(ActionEvent e){
-            
-            CardLayout layout = (CardLayout)panelRight.getLayout();
-            panelRight.add(new LoginScreen(panelRight, adminUser.getCustDir().getCustomerList()));
-            layout.next(panelRight);
-            
-        }
-    }
+    
     /**
      * @param args the command line arguments
      */

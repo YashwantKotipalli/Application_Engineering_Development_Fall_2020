@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.DocumentEvent;
@@ -166,12 +167,16 @@ public class AdminCreateScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         if((txtUser.getText().isEmpty()) || (txtPword.getText().isEmpty()) || (txtRePword.getText().isEmpty())){
+            
             btnCreate.setEnabled(false);
             JOptionPane.showMessageDialog(null, "Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnCreate.setEnabled(true);
 
         }
         else if(((txtUser.getText().isEmpty()) && (txtPword.getText().isEmpty()) && (txtRePword.getText().isEmpty()))){
+            txtUser.setBorder(BorderFactory.createLineBorder(Color.red));
+            txtPword.setBorder(BorderFactory.createLineBorder(Color.red));
+            txtRePword.setBorder(BorderFactory.createLineBorder(Color.red));
             btnCreate.setEnabled(false);
             JOptionPane.showMessageDialog(null, "All the Fields are empty, kindly fill in all the fields", "Information", JOptionPane.INFORMATION_MESSAGE);
             btnCreate.setEnabled(true);
@@ -184,8 +189,28 @@ public class AdminCreateScreen extends javax.swing.JPanel {
         }
 
         else if(!Pattern.matches("^[a-zA-Z0-9]+_[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$", txtUser.getText()) && !Pattern.matches("^[a-zA-Z0-9]+$", txtPword.getText()) && !Pattern.matches("^[a-zA-Z0-9]+$", txtRePword.getText())){
-
-            JOptionPane.showMessageDialog(null, "Please enter a valid name");
+            txtUser.setBorder(BorderFactory.createLineBorder(Color.red));
+            txtPword.setBorder(BorderFactory.createLineBorder(Color.red));
+            txtRePword.setBorder(BorderFactory.createLineBorder(Color.red));
+            JOptionPane.showMessageDialog(null, "Please enter a valid entry");
+            btnCreate.setEnabled(true);
+        }
+        
+        else if(!Pattern.matches("^[a-zA-Z0-9]+_[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$", txtUser.getText())){
+            txtUser.setBorder(BorderFactory.createLineBorder(Color.red));
+            JOptionPane.showMessageDialog(null, "Please enter a valid username");
+            btnCreate.setEnabled(true);
+        }
+        
+        else if(!Pattern.matches("^[a-zA-Z0-9]+$", txtPword.getText())){
+            txtPword.setBorder(BorderFactory.createLineBorder(Color.red));
+            JOptionPane.showMessageDialog(null, "Please enter a valid password");
+            btnCreate.setEnabled(true);
+        }
+        
+        else if(!Pattern.matches("^[a-zA-Z0-9]+$", txtRePword.getText())){
+            txtRePword.setBorder(BorderFactory.createLineBorder(Color.red));
+            JOptionPane.showMessageDialog(null, "Please enter a valid password");
             btnCreate.setEnabled(true);
         }
 
