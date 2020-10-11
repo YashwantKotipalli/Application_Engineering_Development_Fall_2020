@@ -106,9 +106,15 @@ public class LoginScreen extends javax.swing.JPanel {
         //text should either be "Supplier Login Screen" OR "Customer Login Screen"
         //Based on the selection
         
-       
+       if(list.get(0).getRole().equalsIgnoreCase("SUPPLIER")){
+           txtTitle.setText("Supplier Login Screen");
+       }
+       else{
+           
+           txtTitle.setText("Customer Login Screen");
+       }
                    
-        txtTitle.setText("Customer Login Screen");
+        
        
         
         comboUser.removeAllItems();

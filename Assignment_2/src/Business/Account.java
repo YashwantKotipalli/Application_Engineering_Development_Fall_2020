@@ -22,7 +22,7 @@ public class Account {
     private String ModelNumber;
     private String Location;
     private Boolean Availability;
-    private Date createdOn;
+    
 
     public Boolean getAvailability() {
         
@@ -35,7 +35,7 @@ public class Account {
 
     public Account() {
         
-        this.createdOn = new Date();
+        
     }
 
     public String getCarName() {
@@ -94,13 +94,7 @@ public class Account {
         this.Location = Location;
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
+   
     
     
 

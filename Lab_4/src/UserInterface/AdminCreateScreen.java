@@ -19,6 +19,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,7 +38,8 @@ public class AdminCreateScreen extends javax.swing.JPanel {
      */
     private JPanel panelRight;
     private Admin admin;
-    private CustomerDirectory CustomerDirectory;
+    private CustomerDirectory customerDirectory;
+    private User user;
     
     public AdminCreateScreen(JPanel panelRight, Admin admin) {
         
@@ -224,16 +227,19 @@ public class AdminCreateScreen extends javax.swing.JPanel {
         String password = txtPword.getText();
         String Repassword = txtRePword.getText();
         String role = (this.AccountType.getSelection().getActionCommand());
-        Date createdOn = new Date();
+        LocalDateTime dateCreated = LocalDateTime.now();
         
         
         
-//        User customer = admin.custDir.addCustomer();
-//        Customer cust = (Customer) customer; 
-//        cust.setUserName(userName);
-//        cust.setPassword(password);
-//        cust.setPassword(Repassword);
-//        cust.setCreatedOn(createdOn);
+        
+        Customer cust = new Customer(txtPword.getText(), txtUser.getText());
+        this.user = (User) cust;
+        customerDirectory.addCustomer(cust);
+        JOptionPane.showMessageDialog(null, "Customer Account Created Sucessfully");
+        cust.setUserName(userName);
+        cust.setPassword(password);
+        cust.setPassword(Repassword);
+        
         
         
         

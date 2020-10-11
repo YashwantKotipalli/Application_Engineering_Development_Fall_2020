@@ -33,14 +33,14 @@ public class CustomerDirectory {
         this.customerList = supplierList;
     }
 
-//    public Customer addCustomer() {
-//        Customer cust = new Customer();
-//        customerList.add(cust);
-//        return cust;
-//        
-//        
-//        
-//    }
+    public void addCustomer(Customer cust) {
+        
+        customerList.add(cust);
+        
+        
+        
+        
+    }
 
    
 
