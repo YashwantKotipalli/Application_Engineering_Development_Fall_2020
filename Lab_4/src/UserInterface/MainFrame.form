@@ -3,6 +3,9 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[500, 350]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -25,7 +28,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jSplitPane1" pref="376" max="32767" attributes="0"/>
+              <Component id="jSplitPane1" pref="393" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -53,7 +56,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
         </Container>
-        <Container class="javax.swing.JPanel" name="panelLeft">
+        <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
               <JSplitPaneConstraints position="left"/>
@@ -82,7 +85,7 @@
                       <Component id="btnSupplier" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnCustomer" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="168" max="32767" attributes="0"/>
+                      <EmptySpace pref="163" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

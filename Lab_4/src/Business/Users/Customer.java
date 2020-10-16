@@ -76,6 +76,10 @@ public class Customer extends User implements Comparable<Customer>{
     public Object dateCreated() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public Object getDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

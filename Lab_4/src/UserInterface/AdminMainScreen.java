@@ -10,12 +10,13 @@ import Business.Users.Admin;
 import Business.Users.Customer;
 import Business.Users.Supplier;
 import java.awt.CardLayout;
+import java.util.Date;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author DELL
+ * @author AEDSpring2019
  */
 public class AdminMainScreen extends javax.swing.JPanel {
 
@@ -24,13 +25,12 @@ public class AdminMainScreen extends javax.swing.JPanel {
      */
     private JPanel panelRight;
     private Admin admin;
-    
     public AdminMainScreen(JPanel panelRight, Admin admin) {
         initComponents();
         this.panelRight = panelRight;
         this.admin = admin;
-        populateCust();
-        
+        populate();
+        populateCustomer();
     }
 
     /**
@@ -89,7 +89,7 @@ public class AdminMainScreen extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 11, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -98,10 +98,10 @@ public class AdminMainScreen extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnCreate)
                 .addGap(15, 15, 15)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,24 +111,34 @@ public class AdminMainScreen extends javax.swing.JPanel {
         panelRight.add(new AdminCreateScreen(panelRight, admin));
         layout.next(panelRight);
     }//GEN-LAST:event_btnCreateActionPerformed
-    public void populateCust(){
-        
-            DefaultTableModel dtm = (DefaultTableModel)tableCust.getModel();
-            
-            dtm.setRowCount(0);
-            
-            for(User u : admin.getCustDir().getCustomerList()){
-                Customer c = (Customer)u;
-                Object[] row = new Object[dtm.getColumnCount()];
-                row[0]=c;
-                row[1]= c.dateCreated();
-                dtm.addRow(row);
-            }
 
+
+    public void populate(){
+        DefaultTableModel dtm = (DefaultTableModel)tableSup.getModel();
+        dtm.setRowCount(0);
+        for(User u : admin.getSuppDir().getSupplierList()){
+            Supplier s = (Supplier)u;
+            Object[] row = new Object[dtm.getColumnCount()];
+            row[0]=s;
+            row[1]=s.getDirectory().getProductList().size();
+            dtm.addRow(row);
         }
-    
-    
 
+    }
+    
+     public void populateCustomer(){
+        DefaultTableModel dtm = (DefaultTableModel)tableCust.getModel();
+        dtm.setRowCount(0);
+        for(User u : admin.getCustDir().getCustomerList()){
+            Customer s = (Customer)u;
+            Object[] row = new Object[dtm.getColumnCount()];
+            row[0]=s;
+            row[1]= s.getDate();
+            dtm.addRow(row);
+        }
+
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JScrollPane jScrollPane1;
