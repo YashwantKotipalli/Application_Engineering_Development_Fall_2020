@@ -30,5 +30,9 @@ public class SupplierDirectory {
         this.supplierList = supplierList;
     }
     
-    
+    public Supplier addSupplier(Supplier supplier){
+       
+        supplierList.add(supplier);
+        return supplier;
+    }
 }

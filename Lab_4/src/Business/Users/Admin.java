@@ -18,10 +18,10 @@ public class Admin extends User {
     
     public SupplierDirectory suppDir;
     public CustomerDirectory custDir;
-    public static final Date createdOn = new Date();
+    
     public Admin() {
         
-        super("", "", "Admin", createdOn);
+        super("", "", "Admin");
         suppDir = new SupplierDirectory();
         custDir = new CustomerDirectory();
     }

@@ -9,17 +9,14 @@ import Business.Abstract.User;
 import Business.Users.Customer;
 import java.util.ArrayList;
 import java.util.List;
-import Business.Users.Admin;
+
 /**
  *
  * @author AEDSpring2019
  */
-
 public class CustomerDirectory {
     
-    
-    private Admin admin;
-    private List<User> customerList;
+    private static List<User> customerList;
     
     public CustomerDirectory(){
         customerList = new ArrayList<>();
@@ -32,24 +29,11 @@ public class CustomerDirectory {
     public void setCustomerList(List<User> supplierList) {
         this.customerList = supplierList;
     }
-
-//    public Customer addCustomer() {
-//        Customer cust = new Customer();
-//        customerList.add(cust);
-//        return cust;
-//        
-//        
-//        
-//    }
-
-   
-
     
-
-    
-    
-    
-
-    
+    public Customer addCustomer(Customer customer){
+        
+        customerList.add(customer);
+        return customer;
+    }
     
 }

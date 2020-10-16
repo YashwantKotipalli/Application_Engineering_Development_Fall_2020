@@ -17,8 +17,8 @@ public class Supplier extends User implements Comparable<Supplier>{
     
     private ProductDirectory directory;
     
-    public Supplier(String password, String userName, Date createdOn) {
-        super(password, userName, "SUPPLIER", createdOn);
+    public Supplier(String password, String userName) {
+        super(password, userName, "SUPPLIER");
         directory = new ProductDirectory();
     }
 

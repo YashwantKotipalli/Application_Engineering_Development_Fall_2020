@@ -5,23 +5,24 @@
  */
 package UserInterface;
 
+import Business.Abstract.User;
+
 /**
  *
- * @author DELL
+ * @author AEDSpring2019
  */
-
-import Business.Abstract.User;
 public class SuccessScreen extends javax.swing.JPanel {
 
     /**
      * Creates new form SuccessScreen
      */
-    
     private User user; 
-    public SuccessScreen() {
+    public SuccessScreen(User user) {
         initComponents();
         this.user = user;
         initialize();
+        
+        
     }
 
     /**
@@ -33,12 +34,12 @@ public class SuccessScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-
-        jLabel2.setText("Welcome ");
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("Success !!!!!");
+
+        jLabel2.setText("Welcome ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -49,7 +50,7 @@ public class SuccessScreen extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,12 +62,12 @@ public class SuccessScreen extends javax.swing.JPanel {
                 .addContainerGap(180, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
-    
+
+
     private void initialize(){
         jLabel2.setText(jLabel2.getText()+" "+user.getUserName()+" !!!");
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

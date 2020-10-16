@@ -5,6 +5,7 @@
  */
 package Business.Abstract;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -16,23 +17,17 @@ public abstract class User {
     private String userName;
     private String role;
     private String Repassword;
-    public Date createdOn;
+    
 
-    public User(String password, String userName, String role, Date createdOn) {
+    public User(String password, String userName, String role) {
         this.password = password;
         this.userName = userName;
         this.role = role;
         this.Repassword = password;
-        this.createdOn = new Date();
+        
     }
 
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
+    
 
     
     public String getPassword() {

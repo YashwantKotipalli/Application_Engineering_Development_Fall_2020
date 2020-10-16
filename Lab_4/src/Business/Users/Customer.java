@@ -7,6 +7,8 @@ package Business.Users;
 
 import Business.Abstract.User;
 import Business.CustomerDirectory;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -27,8 +29,8 @@ public class Customer extends User implements Comparable<Customer>{
      */
     
 
-    public Customer(String password, String userName, Date createdOn) {
-        super(password, userName, "CUSTOMER", createdOn);
+    public Customer(String password, String userName) {
+        super(password, userName, "CUSTOMER");
         directory = new CustomerDirectory();
         
     }
@@ -39,6 +41,10 @@ public class Customer extends User implements Comparable<Customer>{
 //        directory = new CustomerDirectory();
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
+
+    
+
+    
 
     
 
@@ -65,6 +71,14 @@ public class Customer extends User implements Comparable<Customer>{
         if(password.equals(getPassword()))
             return true;
         return false;
+    }
+
+    public Object dateCreated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
