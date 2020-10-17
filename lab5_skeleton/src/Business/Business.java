@@ -7,25 +7,18 @@ package Business;
 
 /**
  *
- * @author DELL
+ * @author adwai
  */
 public class Business {
     
-    private SupplierDirectory supplierDirectory;
     private MasterOrderCatalog masterOrderCatalog;
+    private SupplierDirectory supplierDirectory;
     
     
-    public Business(){
+    public Business()
+    {
         supplierDirectory = new SupplierDirectory();
         masterOrderCatalog = new MasterOrderCatalog();
-    }
-
-    public SupplierDirectory getSupplierDirectory() {
-        return supplierDirectory;
-    }
-
-    public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
-        this.supplierDirectory = supplierDirectory;
     }
 
     public MasterOrderCatalog getMasterOrderCatalog() {
@@ -35,6 +28,15 @@ public class Business {
     public void setMasterOrderCatalog(MasterOrderCatalog masterOrderCatalog) {
         this.masterOrderCatalog = masterOrderCatalog;
     }
+
+    public SupplierDirectory getSupplierDirectory() {
+        return supplierDirectory;
+    }
+
+    public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
+        this.supplierDirectory = supplierDirectory;
+    }
+    
     
     
 }

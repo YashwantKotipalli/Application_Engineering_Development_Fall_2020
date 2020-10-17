@@ -8,7 +8,6 @@ import UserInterface.CustomerRole.CustomerWorkAreaJPanel;
 import UserInterface.SupplierRole.LoginSupplier;
 import java.awt.CardLayout;
 
-
 /**
  *
  * @author Mihir Mehta / Hechen Gao
@@ -18,7 +17,6 @@ public class MainJFrame extends javax.swing.JFrame {
     /** Creates new form MainJFrame */
     private SupplierDirectory supplierDirectory;
     private MasterOrderCatalog masterOrderCatalog;
-    
     public MainJFrame() {
         initComponents();
         Business business = new Business();
@@ -120,12 +118,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupplierManagerActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
-            
         CustomerWorkAreaJPanel cwajp = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderCatalog);
-        userProcessContainer.add("customerWA", cwajp);
+        userProcessContainer.add("CustomerWorkAreaJPanel", cwajp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     /**

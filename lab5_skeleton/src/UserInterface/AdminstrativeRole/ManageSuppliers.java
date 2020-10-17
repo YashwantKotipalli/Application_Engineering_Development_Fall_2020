@@ -23,7 +23,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
     }
   
     public void refreshTable(){
-        int rowCount = supplierTable.getRowCount();
+        //int rowCount = supplierTable.getRowCount();
         DefaultTableModel model = (DefaultTableModel) supplierTable.getModel();
         /*for(int i=rowCount-1;i>=0;i--){
             model.removeRow(i);

@@ -9,20 +9,20 @@ import java.util.ArrayList;
 
 /**
  *
- * @author DELL
+ * @author adwai
  */
 public class Order {
     
-    
-    private ArrayList<OrderItem> orderItemList ;
+    private ArrayList<OrderItem> orderItemList;
     private int orderNumber;
     private static int count=0;
     
-    public Order(){
+    
+    public Order()
+    {
         count++;
         orderNumber = count;
         orderItemList = new ArrayList<OrderItem>();
-        
     }
 
     public ArrayList<OrderItem> getOrderItemList() {
@@ -40,17 +40,9 @@ public class Order {
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Order.count = count;
-    }
     
-    public OrderItem addOrderItem(Product p, int q, double price){
-        
+    public OrderItem addOrderItem(Product p, int q, double price)
+    {
         OrderItem o = new OrderItem();
         o.setProduct(p);
         o.setQuantity(q);
@@ -59,8 +51,8 @@ public class Order {
         return o;
     }
     
-    public void removeOrderItem(OrderItem o){
-        
+    public void removeOrderItem(OrderItem o)
+    {
         orderItemList.remove(o);
     }
     
