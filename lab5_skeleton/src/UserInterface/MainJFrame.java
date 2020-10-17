@@ -7,7 +7,7 @@ import UserInterface.AdminstrativeRole.AdminWorkAreaJPanel;
 import UserInterface.CustomerRole.CustomerWorkAreaJPanel;
 import UserInterface.SupplierRole.LoginSupplier;
 import java.awt.CardLayout;
-import UserInterface.CustomerRole.CustomerWorkAreaJPanel;
+
 
 /**
  *
@@ -121,7 +121,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
             
-        CustomerWorkAreaJPanel cwajp = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory);
+        CustomerWorkAreaJPanel cwajp = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderCatalog);
         userProcessContainer.add("customerWA", cwajp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
