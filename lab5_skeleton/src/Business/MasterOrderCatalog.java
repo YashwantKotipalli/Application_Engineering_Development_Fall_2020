@@ -36,5 +36,9 @@ public class MasterOrderCatalog {
     public void removeOrder(Order o){
         orderCatalog.remove(o);
     }
+
+    public void addOrder(Order order) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

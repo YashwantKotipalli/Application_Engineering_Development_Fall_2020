@@ -49,7 +49,7 @@ public class Order {
         Order.count = count;
     }
     
-    public OrderItem addOrderItem(Product p, int q, int price){
+    public OrderItem addOrderItem(Product p, int q, double price){
         
         OrderItem o = new OrderItem();
         o.setProduct(p);
