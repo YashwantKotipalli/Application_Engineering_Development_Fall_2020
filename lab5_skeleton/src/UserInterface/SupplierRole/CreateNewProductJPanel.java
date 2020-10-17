@@ -29,13 +29,13 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtAvailability = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txtPrice4 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtAvailability = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -52,11 +52,11 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 210, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Availability: ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 110, 30));
+        jLabel3.setText("Product Price:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 180, 110, 30));
 
-        txtAvailability.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(txtAvailability, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 160, 30));
+        txtPrice.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 160, 30));
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnAdd.setText("Add Product");
@@ -83,19 +83,20 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         txtName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 210, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Product Price:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 180, 110, 30));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Availability:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 110, 30));
 
-        txtPrice4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(txtPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 160, 30));
+        txtAvailability.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtAvailability, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
         Product p = supplier.getProductCatalog().addProduct();
         p.setProdName(txtName.getText());
         p.setAvail(Integer.parseInt(txtAvailability.getText()));
-        String stringPrice = txtAvailability.getText();
+        
+        String stringPrice = txtPrice.getText();
         if(stringPrice.isEmpty()==false){
             int price = Integer.parseInt(stringPrice);
             p.setPrice(price);
@@ -120,11 +121,11 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtAvailability;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPrice4;
+    private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
 }

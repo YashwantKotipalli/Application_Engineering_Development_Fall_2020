@@ -15,6 +15,16 @@ public class Product {
     private int price;
     private int modelNumber;
     private int avail;
+
+    public int getAvail() {
+        return avail;
+    }
+
+    public void setAvail(int avail) {
+        this.avail = avail;
+    }
+    
+    
     
     private static int count =0;
 
@@ -27,14 +37,6 @@ public class Product {
     public Product() {
     count++;
     modelNumber = count;
-    }
-
-    public int getAvail() {
-        return avail;
-    }
-
-    public void setAvail(int avail) {
-        this.avail = avail;
     }
 
     public String getProdName() {

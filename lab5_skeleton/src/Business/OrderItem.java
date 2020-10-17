@@ -7,14 +7,21 @@ package Business;
 
 /**
  *
- * @author DELL
+ * @author adwai
  */
 public class OrderItem {
     
+    private Product product;
     private int quantity;
     private double salesPrice;
-    
-    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public int getQuantity() {
         return quantity;
@@ -31,19 +38,10 @@ public class OrderItem {
     public void setSalesPrice(double salesPrice) {
         this.salesPrice = salesPrice;
     }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
     
     @Override
-    public String toString(){
-        
+    public String toString()
+    {
         return product.getProdName();
     }
-    
 }
